@@ -21,11 +21,13 @@ router.get("/", (req,res) => {
 })
 
 
-router.get("/user/:id", getUser)
+
 
 router.get("/user/user_collection", (req,res) => {
     res.json({mssg: "All fine here today at the user collection"})
 })
+
+router.get("/user/:id", getUser)
 
 router.get("/collection", getBooks)
 
