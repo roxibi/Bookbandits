@@ -7,7 +7,8 @@ const {
     getBooks,
     getUser,
     deleteBook,
-    updateBook
+    updateBook,
+    getUserBooks
 }               = require("../controllers/routecontroller")
 
 const router = express.Router()
@@ -23,13 +24,14 @@ router.get("/", (req,res) => {
 
 
 
-router.get("/user/user_collection", (req,res) => {
-    res.json({mssg: "All fine here today at the user collection"})
-})
 
 router.get("/user/:id", getUser)
 
 router.get("/collection", getBooks)
+
+router.get("/:userid/user_collection", getUserBooks)
+
+router.get("/:userid", getUser)
 
 router.get("/collection/:id", getBook)
 
